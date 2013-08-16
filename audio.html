@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="min.js"></script>
+
+<script>
+var reader = new FileReader();
+
+reader.onload = function (event) {
+    document.getElementById("myplayer").src = event.target.result;
+};
+
+
+function playlist()
+{
+	reader.readAsDataURL(document.getElementById("getFile").files[0]);
+	
+	//document.getElementById('1').innerHTML=document.getElementById('getFile').value;
+}
+function loading(ele1)
+{
+	//var id = ele1.id;
+	//document.getElementById('myplayer').src=document.getElementById('getFile').value;
+	document.getElementById('myplayer').pause();
+	//alert(document.getElementById('getFile').value);
+	}
+function zoom(ele) {
+    var id = ele.value;
+	
+    //alert('area element id = ' + id);
+  }
+</script>
+</head>
+<body>
+<audio id="myplayer" class="speakker dark" autoplay="true" controls>
+
+  <source  id="myplayer" src="E:/My Collection/Awarapan/Tera_Mera_Rishta.mp3" type="audio/mpeg">
+ Your browser does not support the audio element.
+</audio>
+<input type="file" id="getFile" />
+<input id="lol" type="button" style="font-size: 10px;"
+        onclick="javscript:playlist()" onmouseover="javascript:zoom(this);"
+        value="Listen">
+
+<ul>
+</ul>
+</body>
+</html>
